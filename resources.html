@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+
+    <!--font links-->
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!--css file link-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <a href="home.html" class="logo">
+                <img src="images/lunafit-logo.png" alt="LunaFit Logo">
+                Luna<span>Fit</span>
+            </a>
+
+            <div id="menu" class="fas fa-bars"></div>
+
+            <nav class="navbar">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resources.html">Resources</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <!-- resources section -->
+
+        <h1 class="heading">All Workout Videos</h1>
+
+        <section class="resources">
+
+            <div class="main-video">
+                <div class="video">
+                    <video src="images/video1.mp4" controls muted autoplay></video>
+                    <h3 class="title">20 min At Home Leg Workout - No Equipment</h3>
+                </div>
+            </div>
+
+            <div class="video-list">
+                <div class="vid active">
+                    <video src="images/video1.mp4" muted></video>
+                    <h3 class="title">20 min At Home Leg Workout - No Equipment</h3>
+                </div>
+                <div class="vid">
+                    <video src="images/video2.mp4" muted></video>
+                    <h3 class="title">7 min Morning Stretching Routine for Mobility</h3>
+                </div>
+                <div class="vid">
+                    <video src="images/video3.mp4" muted></video>
+                    <h3 class="title">10 min At Home Core Workout - No Equipment</h3>
+                </div>
+                <div class="vid">
+                    <video src="images/video4.mp4" muted></video>
+                    <h3 class="title">15 min At Home Arm Workout - No Equipment</h3>
+                </div>
+                <div class="vid">
+                    <video src="images/video5.mp4" muted></video>
+                    <h3 class="title">7 min Daily Stretches to Help Your Posture</h3>
+                </div>
+            </div>
+
+
+        </section>
+
+        <script>
+        // JavaScript for video switching
+            let listVideo = document.querySelectorAll('.video-list .vid');
+            let mainVideo = document.querySelector('.main-video video');
+            let title = document.querySelector('.main-video .title');
+
+            listVideo.forEach(video => {
+                video.onclick = () => {
+                    listVideo.forEach(vid => vid.classList.remove('active'));
+                    video.classList.add('active');
+                    if(video.classList.contains('active')) {
+                        let src = video.children[0].getAttribute('src');
+                        mainVideo.src = src;
+                        let text = video.children[1].innerHTML;
+                        title.innerHTML = text;
+                
+                    }
+                }
+            })
+        </script>
+
+
+        <!-- footer section -->
+        
+        <section class="footer">
+            <div class="box-container">
+
+                <div class="box">
+                    <h3>Quick Links</h3>
+                    <a href="home.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
+                <div class="box">
+                    <h3>About Us</h3>
+                    <p> At LunaFit, we believe fitness is about so much more than 
+                        lifting weights or hitting a number on the scale — it's 
+                        about building strength, confidence, and knowledge that 
+                        lasts a lifetime</p>
+                </div>
+
+                <div class="box">
+                    <h3>Follow Us</h3>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Tiktok</a>
+                    <a href="#">Youtube</a>
+                </div>
+
+                <div class="box">
+                    <h3>Contact Us</h3>
+                    <p> <i class="fas fa-phone"></i> (216) 123-4567 </p>
+                    <p> <i class="fas fa-envelope"></i> luna@lunafit.com </p>
+                    <p> <i class="fas fa-map-marker-alt"></i> Cleveland, Ohio </p>
+                </div>
+
+                <div class="credit"> Created by <span> Jessica Miltner </span> | All Rights Reserved </div>
+            </div>
+        </section>
+
+
+
+
+
+<!-- js file link -->
+ <script src="js/script.js"></script>
+
+</body>
+
+
+
+</html>
